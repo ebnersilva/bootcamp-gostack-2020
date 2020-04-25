@@ -42,7 +42,7 @@ const Repository: React.FC = () => {
   useEffect(() => {
     async function loadData(): Promise<void> {
       const [repositoryApi, issuesApi] = await Promise.all([
-        api.get(`repos/${params.repository}`),
+        await api.get(`repos/${params.repository}`),
         await api.get(`repos/${params.repository}/issues`),
       ]);
 
